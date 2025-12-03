@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.30;
 
-import "forge-std/Test.sol";
+import "../lib/forge-std/src/Test.sol";
 import "../src/Calculadora.sol";
 
 contract CalculadoraTest is Test {
-    
     Calculadora public calculadora;
     address public admin = address(0xABCD);
     address public user = address(0x1234);

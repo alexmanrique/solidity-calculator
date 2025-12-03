@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.30;
 
 contract Calculadora {
-
     uint256 public resultado;
 
     address public admin;
@@ -12,6 +11,7 @@ contract Calculadora {
     event Substraction(uint256 firstNumber, uint256 secondNumber, uint256 resultado);
     event Multiplier(uint256 firstNumber, uint256 secondNumber, uint256 resultado);
     event Division(uint256 firstNumber, uint256 secondNumber, uint256 resultado);
+
     constructor(uint256 valorInicial_, address admin_) {
         resultado = valorInicial_;
         admin = admin_;
@@ -20,7 +20,7 @@ contract Calculadora {
     modifier onlyAdmin() {
         require(msg.sender == admin, "Only admin can perform this action");
         _;
-    } 
+    }
 
     function addition(uint256 firstNumber_, uint256 secondNumber_) external returns (uint256 resultado_) {
         resultado_ = firstNumber_ + secondNumber_;
