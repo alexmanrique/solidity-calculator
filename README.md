@@ -1,66 +1,27 @@
-## Foundry
+# Calculadora
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A Solidity smart contract calculator that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on the Ethereum blockchain.
 
-Foundry consists of:
+## Contract Overview
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The `Calculadora` contract provides the following functionality:
 
-## Documentation
+- **Addition**: Adds two numbers and updates the result
+- **Subtraction**: Subtracts two numbers and updates the result
+- **Multiplication**: Multiplies two numbers and updates the result
+- **Division**: Divides two numbers (admin-only) and updates the result
 
-https://book.getfoundry.sh/
+### Features
 
-## Usage
+- Public `resultado` state variable that stores the last calculation result
+- Admin-controlled division operation for security
+- Event emissions for all operations
+- Division by zero protection
+- Initial value and admin address set during contract deployment
 
-### Build
+### Contract Functions
 
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- `addition(uint256 firstNumber_, uint256 secondNumber_)` - Public function to add two numbers
+- `substraction(uint256 firstNumber_, uint256 secondNumber_)` - Public function to subtract two numbers
+- `multiply(uint256 firstNumber_, uint256 secondNumber_)` - Public function to multiply two numbers
+- `divide(uint256 firstNumber_, uint256 secondNumber_)` - Admin-only function to divide two numbers
